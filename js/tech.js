@@ -1,4 +1,9 @@
-let conf = {}
+let conf = {
+    headerText: 'こーんにーちわー！',
+    appName: 'Typing',
+    title: '技術科部のプロジェクト',
+    author: 'とぴ。',
+}
 const tech = {
     // ヘッダーテキスト
     headerText: (text) => {
@@ -13,7 +18,8 @@ const tech = {
     },
     // タイトル
     title: (text) => {
-        if (text != undefined) conf.title = text , document.title = `${text} - ${tech.appName()} | 技術科部`
+        const title = `${text} - ${tech.appName()} | 技術科部`
+        if (text != undefined) conf.title = title , document.title = title
         return conf.title
     },
     // 作者
