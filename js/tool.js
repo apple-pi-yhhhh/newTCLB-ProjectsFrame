@@ -41,5 +41,20 @@ const multiple = arr => {
     return count
 }
 
+// ２次元配列の連想配列化
+const arrObj = arr => Object.fromEntries(arr);
+
 // 文字列を逆さにする
 const reversStr = str => str.split('').reverse().join('');
+
+
+
+// urlのパラメーターを連想配列にする
+const urlPalamater = () => {
+    let a = location.search.replace(/^\?/g,'').split('&')
+    let b = []
+    for(let i = 0; i < a.length; i++){
+        b.push(a[i].split('='))
+    }
+    return arrObj(b)
+}
