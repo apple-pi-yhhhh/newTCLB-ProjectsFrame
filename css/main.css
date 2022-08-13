@@ -1,0 +1,78 @@
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #3c4c81;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff8a;
+    border-radius: 5px;
+}
+body {
+    margin: 0;
+    height: 3000;
+    background-color: aqua;
+}
+
+header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+header > a > img {
+    text-align: left;
+    display: inline-block;
+    width: 56;
+    margin: 29;
+}
+header > #headerText {
+    margin: auto;
+}
+header > nav {
+    display: flex;
+    background-color: #ffffff;
+    padding: 32;
+    height: 50;
+}
+header > nav > ul {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+header > nav > ul > li {
+    margin-top: 12;
+    list-style: none;
+    display: inline-block;
+    margin-right: 32;
+}
+header > nav > ul > li > a {
+    font-size: large;
+    text-decoration: none;
+    color: #000000;
+}
+progress {
+    -webkit-appearance: none;
+    width: 100%;
+	top: 114px;
+    position: sticky;
+    height: 4px;
+}
+
+
+main {
+    margin-top: 114;
+}
+
+::-webkit-progress-bar {
+    background-color: #ffffff;
+}
+
+::-webkit-progress-value {
+    background-color: #ff5100;
+}
