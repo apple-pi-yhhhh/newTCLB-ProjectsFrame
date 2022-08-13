@@ -2,6 +2,9 @@
 
 <div id="firebaseui-auth-container"></div>
 
+<h1>...Please wait</h1>
+<div id="info"></div>
+
 <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
@@ -25,7 +28,21 @@ var uiConfig = {
     privacyPolicyUrl: 'URL'
 */
 };
+let ui = new firebaseui.auth.AuthUI(firebase.auth());
+ui.start('#firebaseui-auth-container', uiConfig);
 
-    let ui = new firebaseui.auth.AuthUI(firebase.auth());
-    ui.start('#firebaseui-auth-container', uiConfig);
+// ログイン完了時
+firebase.auth().onAuthStateChanged( (user) => {
+    let h1   = document.querySelector('h1');
+    let info = document.querySelector('#info');
+
+    if(user) {
+    h1.innerText   = 'Login Complete!';
+    info.innerHTML = `${user.displayName}さんがログインしました<br>(${user.uid})`;
+    console.log(user);
+    }
+    else {
+    h1.innerText = 'Not Login';
+    }
+});
 </script>
