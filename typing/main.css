@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #3c4c81;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff8a;
+    border-radius: 5px;
+}
+
+body{
+	background-color: #2b2a33;
+	color: #fbfbfe;
+	
+}
+
+header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #42414d;
+}
+header > a > .logo {
+	margin: 20px 20px 15px 20px;
+	height: 60px;
+	width: 100px;
+	background-color: #fbfbfe;
+}
+header > nav {
+	text-align: center;
+	margin-top: -100px;
+}
+header > nav > ul {
+	right: 0;
+    list-style: none;
+    display: inline-block;
+	font-size: 25px;
+	color: #a0a0a7;
+}
+header > nav > ul > li:hover {
+	color: #fbfbfb;
+}
+header > nav > ul > li.action {
+	color: #fbfbfb;
+	border: 1px inset;
+	border-style: solid;
+	border-color: #00ddff;
+}
+#output {
+	text-align: center;
+	margin: auto;
+	margin-top: -100px;
+	font-size: 40px;
+}
+
+progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4;
+    position: fixed
+}
+::-webkit-progress-bar {
+    background-color: #00000000;
+}
+::-webkit-progress-value {
+    background-color: #00ccff;
+}
+
+.Q {
+	text-align: center;
+	height: 100vh;
+}
+.roma {
+	font-size: 20px;
+}
+.kana {
+	font-size: 20px;
+}
+.main {
+	font-size: 40px;
+}
+
+footer {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 250px;
+	background-color: #42414d;
+}
