@@ -79,16 +79,24 @@ main {
     bottom: 0;
 }
 #stickBottom > #account {
-    float: right;
-}
-#stickBottom > #account > * {
     font-size: 30;
-    margin: auto;
+    float: right;
 }
 #stickBottom > #account > #avatar {
     height: 50;
     float: left;
 }
+#firebaseui-auth-container {
+    margin-top: 5;
+}
+#firebaseui-auth-container > div > div > form {
+    margin: 0;
+}
+#firebaseui-auth-container > div > div > form > ul {
+    margin: 0;
+}
+
+
 
 footer {
     width: 100%;

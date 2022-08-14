@@ -33,7 +33,7 @@ const tech = {
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        conf.user = user
+        conf.user = JSON.parse(JSON.stringify(tech.GoogleAuth.account()))
         document.querySelector('#account').innerHTML = `${user.displayName}<img id="avatar" src="${user.photoURL}">`
     }
     else {
