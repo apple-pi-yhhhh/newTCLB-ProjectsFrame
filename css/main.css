@@ -10,11 +10,6 @@
     background: #ffffff8a;
     border-radius: 5px;
 }
-body {
-    margin: 0;
-    height: 3000;
-    background-color: aqua;
-}
 
 header {
     background: #fff;
@@ -63,12 +58,6 @@ progress {
     position: sticky;
     height: 4px;
 }
-
-
-main {
-    margin-top: 114;
-}
-
 ::-webkit-progress-bar {
     background-color: #ffffff;
 }
@@ -76,3 +65,11 @@ main {
 ::-webkit-progress-value {
     background-color: #ff5100;
 }
+
+
+main {
+    margin-top: 114;
+    height: 3000;
+    background-color: aqua;
+}
+
