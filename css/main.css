@@ -66,20 +66,32 @@ progress {
 }
 
 main {
+    width: 100%;
     height: 3000;
     background-color: aqua;
 }
 
-footer {
+#stickBottom {
+    width: 100%;
     background-color: #ffffff;
     position: sticky;
+    height: 50;
     bottom: 0;
 }
-footer > #account {
-    font-size: 30;
+#stickBottom > #account {
     float: right;
 }
-footer > #account > #avatar {
+#stickBottom > #account > * {
+    font-size: 30;
+    margin: auto;
+}
+#stickBottom > #account > #avatar {
     height: 50;
     float: left;
+}
+
+footer {
+    width: 100%;
+    height: 200;
+    background-color: #ffffff;
 }
