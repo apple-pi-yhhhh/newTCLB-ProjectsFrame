@@ -61,11 +61,9 @@ progress {
 ::-webkit-progress-bar {
     background-color: #ffffff;
 }
-
 ::-webkit-progress-value {
     background-color: #ff5100;
 }
-
 
 main {
     margin-top: 114;
@@ -73,3 +71,6 @@ main {
     background-color: aqua;
 }
 
+footer {
+    background-color: #ffffff;
+}
