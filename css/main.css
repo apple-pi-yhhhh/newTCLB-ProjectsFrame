@@ -75,3 +75,11 @@ footer {
     position: sticky;
     bottom: 0;
 }
+footer > #account {
+    font-size: 30;
+    float: right;
+}
+footer > #account > #avatar {
+    height: 50;
+    float: left;
+}

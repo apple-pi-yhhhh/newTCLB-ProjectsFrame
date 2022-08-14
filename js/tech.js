@@ -38,7 +38,7 @@ const tech = {
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        document.querySelector('#account').innerHTML = `<img src="${user.photoURL}"><p>${user.displayName}</p>`
+        document.querySelector('#account').innerHTML = `${user.displayName}<img id="avatar" src="${user.photoURL}">`
     }
     else {
     }
