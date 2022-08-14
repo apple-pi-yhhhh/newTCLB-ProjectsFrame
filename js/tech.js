@@ -1,9 +1,5 @@
-let conf = {
-    headerText: 'こーんにーちわー！',
-    appName: 'Typing',
-    title: '技術科部のプロジェクト',
-    author: 'とぴ。',
-}
+let conf = {}
+
 const tech = {
     // ヘッダーテキスト
     headerText: (text) => {
@@ -29,15 +25,15 @@ const tech = {
     },
     // GoogleAuth
     GoogleAuth: {
-        login: (path) => {
-            
+        account: () => {
+            return conf.user
         },
-        account: () => {},
     },
 }
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        conf.user = user
         document.querySelector('#account').innerHTML = `${user.displayName}<img id="avatar" src="${user.photoURL}">`
     }
     else {
