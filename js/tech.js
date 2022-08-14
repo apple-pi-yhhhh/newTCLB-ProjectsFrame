@@ -43,3 +43,20 @@ firebase.auth().onAuthStateChanged((user) => {
     else {
     }
 });
+
+let ui = new firebaseui.auth.AuthUI(firebase.auth());
+ui.start('#firebaseui-auth-container', {
+    // ログイン完了時のリダイレクト先
+    signInSuccessUrl: '',
+
+    // 利用する認証機能
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+/*
+    // 利用規約のURL(任意で設定)
+    tosUrl: 'URL',
+    // プライバシーポリシーのURL(任意で設定)
+    privacyPolicyUrl: 'URL'
+*/
+});
