@@ -48,15 +48,14 @@ nav > ul > li {
 }
 header > nav > ul > li {
     margin-top: 12;
-    width: 10vh;
+    width: 10vw;
     text-align: center;
-    border-bottom: solid 2px #357f94;
 }
 header > nav > ul > li.action {
     border-bottom: solid 2px #357f94;
 }
 header > nav > ul > li:hover{
-    border-left: dashed 2px #357f94;
+    border-bottom: dashed 2px #357f94;
 }
 nav > ul > li > a {
     font-size: large;
