@@ -48,11 +48,21 @@ nav > ul > li {
 }
 header > nav > ul > li {
     margin-top: 12;
-    margin-right: 32;
+    width: 10vh;
+    text-align: center;
+    border-bottom: solid 2px #357f94;
+}
+header > nav > ul > li.action {
+    border-bottom: solid 2px #357f94;
+}
+header > nav > ul > li:hover{
+    border-left: dashed 2px #357f94;
 }
 nav > ul > li > a {
     font-size: large;
     text-decoration: none;
+}
+header > nav > ul > li > a {
     color: #000000;
 }
 progress {
@@ -106,14 +116,23 @@ footer {
     width: 100%;
     height: 200;
     background-color: #374151;
-    color: #ffffff;
-}
-footer > nav > ul > li {
-    margin: 5;
 }
 footer > nav > ul {
     padding: 20;
 }
+footer > nav > ul > li {
+    margin: 5;
+}
+footer > nav > ul > li:hover{
+    border-left: dashed 2px #357f94;
+}
+footer > nav > ul > li.action {
+    border-left: solid 2px #357f94;
+}
+footer > nav > ul > li > a{
+    color: #ffffff;
+}
 footer > #copy {
     text-align: center;
+    color: #ffffff;
 }
