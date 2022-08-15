@@ -31,25 +31,28 @@ header > #headerText {
 }
 header > nav {
     display: flex;
-    background-color: #ffffff;
     padding: 32;
     height: 50;
+    color: #000000;
 }
-header > nav > ul {
-    text-align: right;
+nav > ul {
     margin: 0;
     padding: 0;
 }
-header > nav > ul > li {
-    margin-top: 12;
+header > nav > ul {
+    text-align: right;
+}
+nav > ul > li {
     list-style: none;
     display: inline-block;
+}
+header > nav > ul > li {
+    margin-top: 12;
     margin-right: 32;
 }
-header > nav > ul > li > a {
+nav > ul > li > a {
     font-size: large;
     text-decoration: none;
-    color: #000000;
 }
 progress {
     -webkit-appearance: none;
