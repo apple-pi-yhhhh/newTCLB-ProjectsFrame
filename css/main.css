@@ -73,7 +73,7 @@ main {
 
 #stickBottom {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #1F2937;
     position: sticky;
     height: 50;
     bottom: 0;
@@ -101,5 +101,5 @@ main {
 footer {
     width: 100%;
     height: 200;
-    background-color: #ffffff;
+    background-color: #374151;
 }

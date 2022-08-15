@@ -1,3 +1,11 @@
+/*
+tech.headerText('こんにちは')
+tech.appName('Typing')
+tech.title('あああ')
+tech.author('とぴ。')
+tech.GoogleAuth.account()
+*/
+
 let conf = {}
 
 const tech = {
