@@ -1,5 +1,4 @@
-const output = document.getElementById('output'),
-	romaD = document.getElementById('roma'),
+const romaD = document.getElementById('roma'),
 	kanaD = document.getElementById('kana'),
 	mainD = document.getElementById('main')
 
@@ -20,7 +19,7 @@ const type = e => {
 	const key = e.key
 	chars += key
 	const r2hR = r2h(chars)
-	output.innerHTML = `${nowQ.fin + r2hR}`
+	tech.headerText(`${nowQ.fin + r2hR}`)
 	
 	const kanas = r2hR.replace(/[a-z]/g,'').split('')
 	// const kanas = r2hR.match(/[---]/g)
@@ -32,7 +31,6 @@ const type = e => {
 			}
 		}
 		nokoriR()
-		//output.innerHTML = ``;
 		chars = ''
 	}
 	// print(nokori)
