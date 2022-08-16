@@ -10,6 +10,9 @@
     background: #ffffff8a;
     border-radius: 5px;
 }
+p {
+    margin: 0;
+}
 
 header {
     background-color: #ffffff;
