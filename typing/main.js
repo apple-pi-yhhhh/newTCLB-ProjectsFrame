@@ -1,7 +1,3 @@
-const romaD = document.getElementById('roma'),
-	kanaD = document.getElementById('kana'),
-	mainD = document.getElementById('main')
-
 let chars = '',
 	qn = 0,
 	nowQ = allQ[qn],
@@ -65,9 +61,9 @@ const start = () => {
 	for (let i = 0; i < allQ.length; i++) {
 		document.querySelector('main').innerHTML += `
 		<div id="Q${i}" class="Q">
-			<p class="roma">${allQ[i].roma}</p>
-			<p class="kana">${allQ[i].kana}</p>
-			<p class="main">${allQ[i].main}</p>
+			<h2 class="roma">${allQ[i].roma}</h2>
+			<h2 class="kana">${allQ[i].kana}</h2>
+			<h1 class="main">${allQ[i].main}</h1>
 		</div>`
 	}
 	sTime = new Date
