@@ -1,20 +1,20 @@
 let allQ = [
 {
-	roma: 'nattounebanebanattoupenn',
-	kana: 'なっとうねばねばなっとうぺん',
-	main: '納豆ネバネバ納豆ペン',
+	roma: 'gizyutukabutokaiteziyuuzinntoyomu',
+	kana: 'ぎじゅつかぶとかいてじゆうじんとよむ',
+	main: '技術科部と書いて自由人と読む',
 	fin: '',
 },
 {
-	roma: 'penpainappuruappurupenn',
-	kana: 'ぺんぱいなっぷるあっぷるぺん',
-	main: 'ペンパイナップルアップルペン',
+	roma: 'zisyouundoubu',
+	kana: 'じしょううんどうぶ',
+	main: '自称運動部',
 	fin: '',
 },
 {
-	roma: 'senkyuuhyakukyuuzyuuhatinenn',
-	kana: 'せんきゅうひゃくきゅうじゅうはちねん',
-	main: '1998年',
+	roma: 'bokuhaiyada!',
+	kana: 'ぼくはいやだ！',
+	main: '僕は嫌だ！',
 	fin: '',
 },
 ]
