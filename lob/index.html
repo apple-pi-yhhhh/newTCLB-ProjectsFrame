@@ -42,51 +42,51 @@
 window.onload = async () => {
     // 検索する
     var search = async () => {
-    // 入力された値でを本を検索
-    var items = await searchBooks($('#input').value);
+        // 入力された値でを本を検索
+        var items = await searchBooks(document.querySelector('#input').value);
 
-    // html に変換して表示用 DOM に代入
-    var texts = items.map(item => {
-        return `
-        <a class='f border bg-white mb8' href='${item.link}', target='_blank'>
-        <img class='w100 object-fit-contain bg-gray' src='${item.image}' />
-        <div class='p16'>
-            <h3 class='mb8'>${item.title}</h3>
-            <p class='line-clamp-2'>${item.description}</p>
-        </div>
-        </div>`;
-    });
-    $('#results').innerHTML = texts.join('');
+        // html に変換して表示用 DOM に代入
+        var texts = items.map(item => {
+            return `
+            <a class='f border bg-white mb8' href='${item.link}', target='_blank'>
+            <img class='w100 object-fit-contain bg-gray' src='${item.image}' />
+            <div class='p16'>
+                <h3 class='mb8'>${item.title}</h3>
+                <p class='line-clamp-2'>${item.description}</p>
+            </div>
+            </div>`;
+        });
+        document.querySelector('#results').innerHTML = texts.join('');
     };
 
-    // 入力するたびに検索( debounce で API 連打対策 )
-    $('#input').oninput = _.debounce(search, 256);
+        // 入力するたびに検索( debounce で API 連打対策 )
+        document.querySelector('#input').oninput = _.debounce(search, 256);
 
-    // フォーカスしたら全文字選択
-    $('#input').onfocus = () => { $('#input').select(); };
+        // フォーカスしたら全文字選択
+        document.querySelector('#input').onfocus = () => { document.querySelector('#input').select(); };
 
-    search();
+        search();
     };
 
     // 本を検索して結果を返す
     var searchBooks = async (query) => {
-    // Google Books APIs のエンドポイント
-    var endpoint = 'https://www.googleapis.com/books/v1';
+        // Google Books APIs のエンドポイント
+        var endpoint = 'https://www.googleapis.com/books/v1';
 
-    // 検索 API を叩く
-    var res = await fetch(`${endpoint}/volumes?q=${$('#input').value}`);
-    // JSON に変換
-    var data = await res.json();
+        // 検索 API を叩く
+        var res = await fetch(`${endpoint}/volumes?q=${query}`);
+        // JSON に変換
+        var data = await res.json();
 
-    // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
-    var items = data.items.map(item => {
-    var vi = item.volumeInfo;
-    return {
-        title: vi.title,
-        description: vi.description,
-        link: vi.infoLink,
-        image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
-    }; 
+        // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
+        var items = data.items.map(item => {
+        var vi = item.volumeInfo;
+        return {
+            title: vi.title,
+            description: vi.description,
+            link: vi.infoLink,
+            image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
+        }; 
     });
 
     return items;
