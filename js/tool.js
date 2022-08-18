@@ -58,3 +58,33 @@ const urlPalamater = () => {
     }
     return arrObj(b)
 }
+
+const cookie = {
+    get: () => {
+        let result = [];
+        let cookies = document.cookie;
+
+        if(cookies != ''){
+            let cookieArray = cookies.split(';');
+            for(let i = 0; i < cookieArray.length; i++){
+                let cookie = cookieArray[i].split('=');
+                result[cookie[0]] = decodeURIComponent(cookie[1]);
+            }
+        }
+        return result;
+    },
+    set: (obj) => {
+        let cookies = '';
+        for (let key in obj) {
+            cookies += key + '=' + encodeURIComponent(data[key]) + '; ';
+        }
+
+        let expire = new Date();
+        expire.setTime( expire.getTime() + 1000 * 3600 * 24 * period);
+        expire.toUTCString();
+
+        cookies += 'expires=' + expire+';';
+
+        document.cookie = cookies;
+    },
+}
