@@ -61,7 +61,7 @@ const urlPalamater = () => {
 
 const cookie = {
     get: () => {
-        let result = [];
+        let result = {};
         let cookies = document.cookie;
 
         if(cookies != ''){
