@@ -63,21 +63,21 @@ var search = async () => {
     let items = await searchBooks(document.querySelector('#input').value);
     let texts = items.map(item => {
         return `
+<li>
+<img src="${item.image}" width="100" height="60">
+<h1> ${item.title} </h1>
+<h2>著者</h2>
+<p> ${item.description} ${item.link} </p>
+</li>`;
+/*
         <a class='f border bg-white mb8' href='${item.link}', target='_blank'>
         <img class='w100 object-fit-contain bg-gray' src='${item.image}' />
         <div class='p16'>
             <h3 class='mb8'>${item.title}</h3>
             <p class='line-clamp-2'>${item.description}</p>
         </div>
-        </div>`;
-/*
-<li>
-<img src="" width="100" height="60">
-<h1>タイトル</h1>
-<h2>著者</h2>
-<p>説明</p>
-</li>
- */
+        </div>
+*/
     });
     document.querySelector('#results').innerHTML = texts.join('');
 };
