@@ -60,20 +60,21 @@ const searchBooks = async (query) => {
 
 // 検索する
 const search = async () => {
-    const items = await searchBooks($('#input')[0].value);
-    const text = items.map(item => `
+    const items = await searchBooks( $('#input').val() );
+    const text = items.map( item => `
 <li>
 <img src="${item.image}" width="100" height="60">
 <h1> ${item.title} </h1>
 <h2>著者</h2>
 <p> ${item.description} ${item.link} </p>
 </li>` ).join('')
-    $('#results')[0].html(text)
+    $('#results').html(text)
 };
+
 let t = true
 window.onload = async () => {
     // 入力するたびに検索( sleep で API 連打対策 )
-    $('#input')[0].change( async () => {
+    $('#input').change( async () => {
         if(t){
             search()
             t = false
@@ -83,8 +84,8 @@ window.onload = async () => {
     } )
     
     // フォーカスしたら全文字選択
-    $('#input')[0].focus( () => {
-        that.select()
+    $('#input').focus( () => {
+        this.select()
     })
 };
     </script>
