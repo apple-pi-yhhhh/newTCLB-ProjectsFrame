@@ -14,7 +14,7 @@
     
     <div>
         <h2>検索結果</h2>
-        <div id='results'></div>
+        <ul id='results'></ul>
     </div>
     
     <script>
@@ -42,7 +42,7 @@ const search = async () => {
     const items = await searchBooks( $('#input').val() );
     const text = items.map( item => `
 <li>
-<img src="${item.image}" width="100" height="60">
+<img src="${item.image}">
 <h1> ${item.title} </h1>
 <h2>著者</h2>
 <p> ${item.description} ${item.link} </p>
@@ -68,4 +68,15 @@ window.onload = async () => {
     })
 };
     </script>
+    <style>
+        ul#results {
+  margin: 0;
+  padding: 0;
+}
+ul#results > li {
+    list-style: none;
+    background-color: aqua;
+    margin: 40;
+}
+    </style>
 </body>
