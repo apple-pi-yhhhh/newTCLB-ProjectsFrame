@@ -54,7 +54,9 @@ let t = true
 window.onload = async () => {
     // 入力するたびに検索( sleep で API 連打対策 )
     $('#input').change( async () => {
+        print('Change')
         if(t){
+            print('Search')
             search()
             t = false
             await sleep(256)
