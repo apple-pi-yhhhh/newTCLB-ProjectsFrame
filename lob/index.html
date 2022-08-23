@@ -54,11 +54,11 @@ let c = '', t = true
 window.onload = () => {
     // 入力するたびに検索
     $('#input').keyup( async (e) => {
-        if( c != $('#input').val() && t ){
+        if( c != $('#input').val() && t && $('#input').val() != '' ){
             t = false
             c = $('#input').val()
             await search()
-            await sleep(256)
+            await sleep(500)
             t = true
         }
     });
