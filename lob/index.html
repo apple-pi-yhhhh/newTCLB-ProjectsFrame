@@ -26,7 +26,7 @@ const searchBooks = async (text) => {
     let i = 0
     while(true){
         var data = await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${40*i}`) ).json()
-        if(!data.items) return items.flat(0)
+        if(!data.items) return items.flat(1)
         // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
         items.push(data.items.map(item => {
             const vi = item.volumeInfo;
