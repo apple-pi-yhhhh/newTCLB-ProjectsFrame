@@ -51,9 +51,9 @@ const search = async () => {
 };
 
 let c = '', t = true
-window.onload = async () => {
+window.onload = () => {
     // 入力するたびに検索
-    $('#input').keyup((e) => {
+    $('#input').keyup( async (e) => {
         if( c != $('#input').val() && t ){
             t = false
             c = $('#input').val()
