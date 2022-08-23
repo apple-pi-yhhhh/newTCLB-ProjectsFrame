@@ -22,7 +22,7 @@
 // 本を検索して結果を返す
 const searchBooks = async (text) => {
     const query = encodeURI(text.replace(/[ |\s]+/g,'+'))
-    const n = ( await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=0`) ).json() ).totalItems
+    const n = ( await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1`) ).json() ).totalItems
     const m = (n-(n%40))/40
     let items = []
     for(let i = 0; i < m; i++){
