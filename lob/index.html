@@ -50,13 +50,16 @@ const search = async () => {
     $('#results').html(text)
 };
 
-let c = ''
+let c = '', t = true
 window.onload = async () => {
     // 入力するたびに検索
     $('#input').keyup((e) => {
-        if( c != $('#input').val() ){
+        if( c != $('#input').val() && t ){
+            t = false
             c = $('#input').val()
-            search()
+            await search()
+            await sleep(256)
+            t = true
         }
     });
     // フォーカスしたら全文字選択
