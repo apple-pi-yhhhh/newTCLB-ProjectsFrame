@@ -25,8 +25,10 @@ const searchBooks = async (text) => {
     const n = ( await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1`) ).json() ).totalItems
     const m = (n-(n%40))/40
     let items = []
-    for(let i = 0; i < m; i++){
-        var data = await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${40*i}`) ).json();
+    let i = 0
+    while(true){
+        var data = await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${40*i}`) ).json()
+        if(data.items.length) return items
         // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
         items.push(data.items.map(item => {
             const vi = item.volumeInfo;
@@ -37,8 +39,8 @@ const searchBooks = async (text) => {
                 image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
             };
         }))
+        i++
     }
-    return items;
 };
 
 // 検索する
