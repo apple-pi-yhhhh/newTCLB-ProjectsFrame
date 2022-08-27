@@ -63,23 +63,9 @@
         <div id="copy">技術科部 © 2022 All Rights Reserved.</div>
     </footer>
     <script>
-        let send_datas = [];
         (async() => {
-            /*
-                        const inputting = (e) => {
-                            const key = e.key,
-                                val = $('#input').val()
-                            
-                            if( key==='Enter' && $('#input').val() ){
-                                confirm('')
-                                location.href = `/`
-                            } else {
-                                $('#input').val( val + key )
-                            }
-                        }
-                        document.addEventListener('keypress', inputting)
-                        document.removeEventListener('keypress', inputting);
-                        */
+            let send_datas = [];
+
             while (true) {
                 var input = prompt()
                 if (input) {
@@ -89,16 +75,17 @@
                     print(input)
                 }
             }
+
+            const items = send_datas.map(item => {
+                const vi = item.volumeInfo;
+                return {
+                    title: vi.title,
+                    description: vi.description,
+                    link: vi.infoLink,
+                    image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
+                }
+            })
         })()
-        const items = send_datas.map(item => {
-            const vi = item.volumeInfo;
-            return {
-                title: vi.title,
-                description: vi.description,
-                link: vi.infoLink,
-                image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
-            }
-        })
     </script>
 </body>
 
