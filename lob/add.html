@@ -83,7 +83,7 @@
             while (true) {
                 var input = prompt()
                 if (input) {
-                    send_datas.push((await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:9784469245950`)).json()).items[0])
+                    send_datas.push((await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json()).items[0])
                 } else {
                     break
                     print(input)
