@@ -63,33 +63,33 @@
         <div id="copy">技術科部 © 2022 All Rights Reserved.</div>
     </footer>
     <script>
-        let send_datas = []
-            (async() => {
-                /*
-                            const inputting = (e) => {
-                                const key = e.key,
-                                    val = $('#input').val()
-                                
-                                if( key==='Enter' && $('#input').val() ){
-                                    confirm('')
-                                    location.href = `/`
-                                } else {
-                                    $('#input').val( val + key )
-                                }
+        let send_datas = [];
+        (async() => {
+            /*
+                        const inputting = (e) => {
+                            const key = e.key,
+                                val = $('#input').val()
+                            
+                            if( key==='Enter' && $('#input').val() ){
+                                confirm('')
+                                location.href = `/`
+                            } else {
+                                $('#input').val( val + key )
                             }
-                            document.addEventListener('keypress', inputting)
-                            document.removeEventListener('keypress', inputting);
-                            */
-                while (true) {
-                    var input = prompt()
-                    if (input) {
-                        send_datas.push(await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json().items[0])
-                    } else {
-                        break
-                        print(input)
-                    }
+                        }
+                        document.addEventListener('keypress', inputting)
+                        document.removeEventListener('keypress', inputting);
+                        */
+            while (true) {
+                var input = prompt()
+                if (input) {
+                    send_datas.push(await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json().items[0])
+                } else {
+                    break
+                    print(input)
                 }
-            })()
+            }
+        })()
         const items = send_datas.map(item => {
             const vi = item.volumeInfo;
             return {
