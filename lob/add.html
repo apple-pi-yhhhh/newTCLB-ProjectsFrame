@@ -63,7 +63,7 @@
         <div id="copy">技術科部 © 2022 All Rights Reserved.</div>
     </footer>
     <script>
-        async() => {
+        (async() => {
             /*
                         const inputting = (e) => {
                             const key = e.key,
@@ -80,15 +80,15 @@
                         document.removeEventListener('keypress', inputting);
                         */
             let send_datas = []
-            for (let breakk = true; breakk = true; print('next')) {
+            while (true) {
                 var input = prompt()
-                if (!input) {
-                    breakk = false
-                } else {
+                if (input) {
                     send_datas.push(await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json().items[0])
+                } else {
+                    break
                 }
             }
-        }
+        })()
         const items = send_datas.map(item => {
             const vi = item.volumeInfo;
             return {
