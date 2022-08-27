@@ -63,30 +63,30 @@
         <div id="copy">技術科部 © 2022 All Rights Reserved.</div>
     </footer>
     <script>
-        /*
-            const inputting = (e) => {
-                const key = e.key,
-                    val = $('#input').val()
-                
-                if( key==='Enter' && $('#input').val() ){
-                    confirm('')
-                    location.href = `/`
+        async() => {
+            /*
+                        const inputting = (e) => {
+                            const key = e.key,
+                                val = $('#input').val()
+                            
+                            if( key==='Enter' && $('#input').val() ){
+                                confirm('')
+                                location.href = `/`
+                            } else {
+                                $('#input').val( val + key )
+                            }
+                        }
+                        document.addEventListener('keypress', inputting)
+                        document.removeEventListener('keypress', inputting);
+                        */
+            let send_datas = []
+            for (let breakk = true; breakk = true; print('next')) {
+                var input = prompt()
+                if (!input) {
+                    breakk = false
                 } else {
-                    $('#input').val( val + key )
+                    send_datas.push(await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json().items[0])
                 }
-            }
-            document.addEventListener('keypress', inputting)
-            document.removeEventListener('keypress', inputting);
-            */
-        let send_datas = []
-        for (let breakk = true; breakk = true; print('next')) {
-            var input = prompt()
-            if (!input) {
-                breakk = false
-            } else {
-                send_datas.push((async() => {
-                    await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input}`)).json().items[0]
-                })())
             }
         }
         const items = send_datas.map(item => {
