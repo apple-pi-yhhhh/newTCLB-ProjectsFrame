@@ -1,139 +1,254 @@
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* ::-webkit , * - 全体に適用させるやつ、スクロールバーとか _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
+
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #3c4c81;
-    border-radius: 5px;
+  background: #3c4c81;
+  border-radius: 5px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #ffffff8a;
-    border-radius: 5px;
+  background: #ffffff8a;
+  border-radius: 5px;
 }
+
+* {
+  text-decoration: none;
+}
+
 p {
-    margin: 0;
+  margin: 0;
 }
+
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* header - ヘッダー _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
 
 header {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-	top: 0;
-	left: 0;
-	width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-header > a > img {
-    text-align: left;
-    display: inline-block;
-    width: 56;
-    margin: 29;
+
+header>a>img {
+  text-align: left;
+  display: inline-block;
+  width: 56;
+  margin: 29;
 }
-header > #headerText {
-    margin: auto;
+
+header>#headerText {
+  margin: auto;
 }
-header > nav {
-    display: flex;
-    padding: 32;
-    height: 50;
-    color: #000000;
+
+header>nav {
+  display: flex;
+  padding: 32;
+  height: 50;
+  color: #000000;
 }
-nav > ul {
-    margin: 0;
-    padding: 0;
+
+nav>ul {
+  margin: 0;
+  padding: 0;
 }
-header > nav > ul {
-    text-align: right;
+
+header>nav>ul {
+  text-align: right;
 }
-nav > ul > li {
-    list-style: none;
-    display: inline-block;
+
+nav>ul>li {
+  list-style: none;
+  display: inline-block;
 }
-header > nav > ul > li {
-    margin-top: 12;
-    width: 10vw;
-    text-align: center;
+
+header>nav>ul>li {
+  margin-top: 12;
+  width: 10vw;
+  text-align: center;
 }
-header > nav > ul > li.action {
-    border-bottom: solid 2px #357f94;
+
+header>nav>ul>li.action {
+  border-bottom: solid 2px #357f94;
 }
-header > nav > ul > li:hover{
-    border-bottom: dashed 2px #357f94;
+
+header>nav>ul>li:hover {
+  border-bottom: dashed 2px #357f94;
 }
-nav > ul > li > a {
-    font-size: large;
-    text-decoration: none;
+
+nav>ul>li>a {
+  font-size: large;
+  text-decoration: none;
 }
-header > nav > ul > li > a {
-    color: #000000;
+
+header>nav>ul>li>a {
+  color: #000000;
 }
+
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* progress - 進捗バー _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
+
 progress {
-    -webkit-appearance: none;
-    width: 100%;
-	top: 114px;
-    position: sticky;
-    height: 4px;
+  -webkit-appearance: none;
+  width: 100%;
+  top: 114px;
+  position: sticky;
+  height: 4px;
 }
+
 ::-webkit-progress-bar {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
+
 ::-webkit-progress-value {
-    background-color: #ff5100;
+  background-color: #ff5100;
 }
+
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* main - メイン _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
 
 main {
-    width: 100%;
-    background-color: aqua;
+  width: 100%;
+  background-color: #ffffff;
 }
+
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* #markdown - マークダウン _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
+
+#markdown>* {
+  margin-left: 70px;
+}
+
+#markdown>h1 {
+  border-bottom: solid #cccccc 4px;
+  padding: 10;
+  margin: 10;
+  margin-top: 40;
+  font-size: 45;
+}
+
+#markdown>h2 {
+  margin: 10;
+  margin-left: 30px;
+  font-size: 30;
+  border-bottom: dashed #cccccc 3px;
+}
+
+#markdown>h3 {
+  margin: 5;
+  margin-left: 60px;
+  font-size: 20;
+  border-bottom: dotted #cccccc 2.5px;
+}
+
+#markdown>a>.link {
+  height: 120;
+  background-color: #ffffff;
+  margin: 20;
+  border: solid #cccccc 2px;
+  border-radius: 16px;
+  position: relative;
+}
+
+#markdown>a>.link :hover{
+  background-color: #F4F9FC;
+}
+
+#markdown>a>.link>img {
+  margin: 0;
+  margin-left: 30;
+  height: 100%;
+  float: right;
+}
+
+#markdown>a>.link>h1, p {
+  margin: 10;
+  color: #000000
+}
+
+#markdown>a>.link>h1 {
+  font-size: 25;
+}
+
+#markdown>a>.link>p#description {
+  font-size: 12;
+}
+
+#markdown>a>.link>p#host {
+  font-size: 14;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* #stickBottom - 下にずっとくっついてるバー _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
 
 #stickBottom {
-    width: 100%;
-    background-color: #1F2937;
-    position: sticky;
-    height: 50;
-    bottom: 0;
+  width: 100%;
+  background-color: #1F2937;
+  position: sticky;
+  height: 50;
+  bottom: 0;
 }
-#stickBottom > #account {
-    font-size: 30;
-    float: right;
+
+#stickBottom>#account {
+  font-size: 30;
+  float: right;
 }
-#stickBottom > #account > #avatar {
-    height: 50;
-    float: left;
+
+#stickBottom>#account>#avatar {
+  height: 50;
+  float: left;
 }
+
 #firebaseui-auth-container {
-    margin-top: 5;
+  margin-top: 5;
 }
-#firebaseui-auth-container > div > div > form {
-    margin: 0;
+
+#firebaseui-auth-container>div>div>form {
+  margin: 0;
 }
-#firebaseui-auth-container > div > div > form > ul {
-    margin: 0;
+
+#firebaseui-auth-container>div>div>form>ul {
+  margin: 0;
 }
 
 
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* footer - フッター _*_*_*_*_*_*_*_*_*_*_*_*_*_*/
 
 footer {
-    width: 100%;
-    height: 200;
-    background-color: #374151;
+  width: 100%;
+  height: 200;
+  background-color: #374151;
 }
-footer > nav > ul {
-    padding: 20;
+
+footer>nav>ul {
+  padding: 20;
 }
-footer > nav > ul > li {
-    margin: 5;
+
+footer>nav>ul>li {
+  margin: 5;
 }
-footer > nav > ul > li:hover{
-    border-left: dashed 2px #357f94;
+
+footer>nav>ul>li:hover {
+  border-left: dashed 2px #357f94;
 }
-footer > nav > ul > li.action {
-    border-left: solid 2px #357f94;
+
+footer>nav>ul>li.action {
+  border-left: solid 2px #357f94;
 }
-footer > nav > ul > li > a{
-    color: #ffffff;
+
+footer>nav>ul>li>a {
+  color: #ffffff;
 }
-footer > #copy {
-    text-align: center;
-    color: #ffffff;
+
+footer>#copy {
+  text-align: center;
+  color: #ffffff;
 }
