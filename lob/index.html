@@ -1,86 +1,101 @@
-<html lang=ja>
+<html lang="ja">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../js/tool.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/tool.js"></script>
 </head>
 
 <body>
-    <input id='input' />
-    
+    <input id="input" />
+
     <div>
         <h2>検索結果</h2>
-        <ul id='results'></ul>
+        <ul id="results"></ul>
     </div>
-    
+
     <script>
+        // 本を検索して結果を返す
+        const searchBooks = async(text) => {
+            const query = encodeURI(text.replace(/[ |\s]+/g, "+"));
+            let items = [];
+            let i = 0;
+            while (true) {
+                var data = await (
+                    await fetch(
+                        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${
+40 * i
+}`
+                    )
+                ).json();
+                if (!data.items) return items.flat(1);
+                // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
+                items.push(
+                    data.items.map((item) => {
+                        const vi = item.volumeInfo;
+                        return {
+                            title: vi.title,
+                            description: vi.description,
+                            link: vi.infoLink,
+                            image: vi.imageLinks ? vi.imageLinks.smallThumbnail : "",
+                        };
+                    })
+                );
+                i++;
+            }
+        };
 
-// 本を検索して結果を返す
-const searchBooks = async (text) => {
-    const query = encodeURI(text.replace(/[ |\s]+/g,'+'))
-    let items = []
-    let i = 0
-    while(true){
-        var data = await ( await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${40*i}`) ).json()
-        if(!data.items) return items.flat(1)
-        // 必要なものだけ抜き出してわかりやすいフォーマットに変更する
-        items.push(data.items.map(item => {
-            const vi = item.volumeInfo;
-            return {
-                title: vi.title,
-                description: vi.description,
-                link: vi.infoLink,
-                image: vi.imageLinks ? vi.imageLinks.smallThumbnail : '',
-            };
-        }))
-        i++
-    }
-};
-
-// 検索する
-const search = async () => {
-    const items = await searchBooks( $('#input').val() );
-    const text = items.map( item => `
+        // 検索する
+        const search = async() => {
+            const items = await searchBooks($("#input").val());
+            const text = items
+                .map(
+                    (item) => `
 <li>
 <img src="${item.image}">
 <h1> ${item.title} </h1>
 <h2>著者</h2>
 <p> ${item.description} ${item.link} </p>
-</li>` ).join('')
-    $('#results').html(text)
-};
+</li>`
+                )
+                .join("");
+            $("#results").html(text);
+        };
 
-let c = '', t = true
-window.onload = () => {
-    // 入力するたびに検索
-    $('#input').keyup( async (e) => {
-        if( c != $('#input').val() && t && $('#input').val() != '' ){
-            t = false
-            c = $('#input').val()
-            await search()
-            await sleep(500)
-            t = true
-        }
-    });
-    // フォーカスしたら全文字選択
-    $('#input').focus( () => {
-        $('#input').select()
-    })
-};
+        let c = "",
+            t = true;
+        window.onload = () => {
+            // 入力するたびに検索
+            $("#input").keyup(async(e) => {
+                if (c != $("#input").val() && t && $("#input").val() != "") {
+                    t = false;
+                    c = $("#input").val();
+                    await search();
+                    await sleep(500);
+                    t = true;
+                }
+            });
+            // フォーカスしたら全文字選択
+            $("#input").focus(() => {
+                $("#input").select();
+            });
+        };
     </script>
     <style>
         ul#results {
-  margin: 0;
-  padding: 0;
-}
-ul#results > li {
-    list-style: none;
-    background-color: aqua;
-    margin: 40;
-}
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul#results>li {
+            list-style: none;
+            background-color: aqua;
+            margin: 40;
+        }
     </style>
 </body>
+
+</html>
